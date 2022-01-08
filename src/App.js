@@ -18,8 +18,6 @@ import {
 // Import other React Component
 import CreateStudent from
   "./Components/create-student.component";
-import EditStudent from
-  "./Components/edit-student.component";
 import StudentList from
   "./Components/student-list.component";
 
@@ -66,8 +64,6 @@ export default function App() {
                     element={<CreateStudent />} />
                   <Route path="/create-student"
                     element={<CreateStudent />} />
-                  <Route path="/edit-student/:id"
-                    element={<EditStudent />} />
                   <Route path="/student-list"
                     element={<StudentList />} />
                 </Routes>

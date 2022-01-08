@@ -1,22 +1,24 @@
 // CreateStudent Component for add new student
 
 // Import Modules
-import React, { useState, useEffect } from "react";
+import React from "react";
 import axios from 'axios';
 import StudentForm from "./StudentForm";
 
 // CreateStudent Component
 export default function CreateStudent() {
     const [formValues, setFormValues] =
-        useState({ name: '', email: '', rollno: '' })
+        React.useState({ name: '', email: '', rollno: '' })
     // onSubmit handler
     const onSubmit = studentObject => {
         axios.post(
             'http://localhost:4000/students/create-student',
             studentObject)
             .then(res => {
-                if (res.status === 200)
-                    alert('Student successfully created')
+                if (res.status === 200) {
+                    alert('Student successfully created');
+                    setFormValues(studentObject)
+                }
                 else
                     Promise.reject()
             })
